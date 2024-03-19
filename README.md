@@ -25,19 +25,13 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/yadev83/symmetrical-fiesta">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-<h3 align="center">Symmetrical Fiesta</h3>
-
+  <h3 align="center">Symmetrical Fiesta</h3>
   <p align="center">
-    A simple real time chat webapp for the fun
-    <br />
-    ·
-    <a href="https://github.com/yadev83/symmetrical-fiesta/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/yadev83/symmetrical-fiesta/issues">Request Feature</a>
+	A simple real time chat webapp for the fun
+	<br />
+	<a href="https://github.com/yadev83/symmetrical-fiesta/issues">Report Bug</a>
+	·
+	<a href="https://github.com/yadev83/symmetrical-fiesta/issues">Request Feature</a>
   </p>
 </div>
 
@@ -47,21 +41,21 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+	<li>
+	  <a href="#about-the-project">About The Project</a>
+	</li>
+	<li>
+	  <a href="#getting-started">Getting Started</a>
+	  <ul>
+		<li><a href="#prerequisites">Prerequisites</a></li>
+		<li><a href="#installation">Installation</a></li>
+	  </ul>
+	</li>
+	<li><a href="#usage">Usage</a></li>
+	<li><a href="#roadmap">Roadmap</a></li>
+	<li><a href="#license">License</a></li>
+	<li><a href="#contact">Contact</a></li>
+	<li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -116,10 +110,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] Landing page (Login / Register)
-    - [ ] Authentication Backend
+	- [ ] Authentication Backend
 - [ ] Chat App 
-    - [ ] Pick a chatroom
-    - [ ] Realtime chatsync
+	- [ ] Pick a chatroom
+	- [ ] Realtime chatsync
 
 See the [open issues](https://github.com/yadev83/symmetrical-fiesta/issues) for a full list of proposed features (and known issues).
 
@@ -163,8 +157,8 @@ Project Link: [https://github.com/yadev83/symmetrical-fiesta](https://github.com
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [stars-shield]: https://img.shields.io/github/stars/yadev83/symmetrical-fiesta.svg?style=for-the-badge
 [stars-url]: https://github.com/yadev83/symmetrical-fiesta/stargazers
-[commits-shield]: https://img.shields.io/github/commit-activity/t/yadev83/symmetrical-fiesta
-[commits-url]: https://github.com/yadev83/symmetrical-fiesta/
+[commits-shield]: https://img.shields.io/github/commit-activity/t/yadev83/symmetrical-fiesta.svg?style=for-the-badge
+[commits-url]: https://github.com/yadev83/symmetrical-fiesta/commits
 [issues-shield]: https://img.shields.io/github/issues/yadev83/symmetrical-fiesta.svg?style=for-the-badge
 [issues-url]: https://github.com/yadev83/symmetrical-fiesta/issues
 [license-shield]: https://img.shields.io/github/license/yadev83/symmetrical-fiesta.svg?style=for-the-badge
