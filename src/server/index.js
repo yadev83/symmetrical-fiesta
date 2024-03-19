@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express')
+const { prisma } = require('./utils')
 
 const app = express()
 const port = process.env.PORT || 80
