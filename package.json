@@ -1,0 +1,17 @@
+{
+	"name": "symmetrical-fiesta",
+	"version": "0.0.1",
+	"description": "A simple realtime webchat app 4 fun",
+	"scripts": {
+		"build": "sass src/application/assets/sass:public/css && cp -r src/application/assets/js public/",
+		"dev": "cd src/server && node --watch index.js"
+	},
+	"author": "yadev83",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.18.3",
+		"express-session": "^1.18.0",
+		"prisma": "^5.11.0",
+		"sass": "^1.72.0"
+	}
+}
