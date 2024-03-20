@@ -17,8 +17,8 @@ server.use('/robots.txt', (req, res) => {
 	res.send('User-agent: *\nDisallow: /')
 })
 
+// Setup basic headers
 server.use(function (req, res, next) {
-	// const source = env === 'production' ? 'https://oditor.my-groom-service.com' : 'http://127.0.0.1:8050'
 	// Website you wish to allow to connect
 	res.setHeader('Access-Control-Allow-Origin', '*')
 	// Request methods you wish to allow
