@@ -1,10 +1,11 @@
 const { Router } = require('express')
-const { getIndex, getLogin } = require('./actions')
+const { renderIndex, renderLogin, renderRegister } = require('./actions')
 const { checkuserauth } = require('#middlewares')
 
 const viewsRouter = Router()
 
-viewsRouter.get('/', checkuserauth, getIndex)
-viewsRouter.get('/login', getLogin)
+viewsRouter.get('/', checkuserauth(), renderIndex)
+viewsRouter.get('/login', checkuserauth(false), renderLogin)
+viewsRouter.get('/register', checkuserauth(false), renderRegister)
 
 module.exports = viewsRouter

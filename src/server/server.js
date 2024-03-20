@@ -11,7 +11,9 @@ server.set('port', process.env.PORT || 80)
 server.set('view engine', 'ejs')
 server.set('views', viewsPath)
 
+const sessionStore = new session.MemoryStore()
 server.use(session({
+	store: sessionStore,
 	secret: 'session-secret',
 	resave: false,
 	saveUninitialized: true,
@@ -41,6 +43,10 @@ server.use(function (req, res, next) {
 	res.setHeader('Access-Control-Allow-Credentials', true)
 	// Pass to next layer of middleware
 	next()
+})
+
+server.use('/store', (req, res) => {
+	return res.status(200).json({store: sessionStore, sessionID: req.sessionID})
 })
 
 // Map our routes to the server

@@ -2,7 +2,7 @@ const path = require('path')
 const { getUser } = require('#actions/users')
 
 module.exports = {
-    getIndex: (req, res) => {
+    renderIndex: (req, res) => {
         getUser(req.session.userId).then(user => {
             return res.render('index', {user})
         }).catch(err => {
@@ -11,10 +11,11 @@ module.exports = {
         })
     },
 
-    getLogin: (req, res) => {
-        if(req.session?.userId)
-            return res.redirect('/')
-
+    renderLogin: (req, res) => {
         return res.render('login', {error: req.session?.error || undefined})
+    },
+
+    renderRegister: (req, res) => {
+        return res.render('register', {error: req.session?.error || undefined})
     }
 }
