@@ -1,19 +1,20 @@
 const path = require('path')
-
-const viewsPath = path.resolve(__dirname, '../../../application/views')
-const getView = (name) => {
-    return path.resolve(viewsPath, name)
-}
+const { getUser } = require('#actions/users')
 
 module.exports = {
     getIndex: (req, res) => {
-        if(req.session?.userId && req.session?.isAuthenticated)
-            return res.sendFile(getView('index.html'))
-        else
-            return res.redirect('/login')
+        getUser(req.session.userId).then(user => {
+            return res.render('index', {user})
+        }).catch(err => {
+            console.error('ERROR while rendering index view', err.toString())
+            return res.render('index')
+        })
     },
 
     getLogin: (req, res) => {
-        return res.sendFile(getView('login.html'))
+        if(req.session?.userId)
+            return res.redirect('/')
+
+        return res.render('login', {error: req.session?.error || undefined})
     }
 }
