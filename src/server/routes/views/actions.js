@@ -7,6 +7,13 @@ const getView = (name) => {
 
 module.exports = {
     getIndex: (req, res) => {
-        return res.sendFile(getView('index.html'))
+        if(req.session?.userId && req.session?.isAuthenticated)
+            return res.sendFile(getView('index.html'))
+        else
+            return res.redirect('/login')
+    },
+
+    getLogin: (req, res) => {
+        return res.sendFile(getView('login.html'))
     }
 }

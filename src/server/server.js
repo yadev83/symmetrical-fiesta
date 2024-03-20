@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const path = require('path')
 const router = require('./router')
 
@@ -6,6 +7,13 @@ const publicPath = path.resolve(__dirname, '../../public')
 
 const server = express()
 server.set('port', process.env.PORT || 80)
+
+server.use(session({
+	secret: 'session-secret',
+	resave: false,
+	saveUninitialized: true,
+	cookie: { secure: false }
+}))
 
 server.use(express.json())
 server.use(express.urlencoded({extended: false}))
