@@ -4,9 +4,12 @@ const path = require('path')
 const router = require('./router')
 
 const publicPath = path.resolve(__dirname, '../../public')
+const viewsPath = path.resolve(__dirname, '../application/views')
 
 const server = express()
 server.set('port', process.env.PORT || 80)
+server.set('view engine', 'ejs')
+server.set('views', viewsPath)
 
 server.use(session({
 	secret: 'session-secret',

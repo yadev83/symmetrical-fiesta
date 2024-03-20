@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <%- include('layout/head.ejs') %>
+
+    <body>
+        <h1>Symmertical Fiesta</h1>
+        <section>Salut à tous !</section>
+
+        <article>
+            <% if (locals.user) { %>
+                <h2>Bonjour <%= user.name %></h2>
+            <% } %>
+            <button><a href="api/auth/logout">Déconnexion</a></button>
+        </article>
+
+        <%- include('layout/footer.ejs') %>
+    </body>
+</html>
