@@ -36,7 +36,7 @@ server.use(function (req, res, next) {
 server.use('/', router())
 
 // This is reached if no routes could match (404)
-server.get((req, res, next) => {
+server.use((req, res, next) => {
     res.status(404).send('Déso pas déso, c\'est introuvable ! (404)')
 })
 
