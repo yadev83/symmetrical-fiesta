@@ -1,23 +1,7 @@
-const path = require('path')
-const express = require('express')
-const { prisma } = require('./utils')
+const { prisma, ENV } = require('./utils')
+const server = require('./server')
 
-const app = express()
-const port = process.env.PORT || 80
-
-const publicPath = path.resolve(__dirname, '../../public')
-const viewsPath = path.resolve(__dirname, '../application/views')
-
-app.use(express.static(publicPath))
-
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(viewsPath, 'index.html'))
-})
-
-app.use((req, res, next) => {
-    res.status(404).send("Sorry can't find that!")
-})
-
-app.listen(port, () => {
+const port = server.get('port')
+server.listen(port, (err) => {
     console.log(`SERVER Listening : http://localhost:${port}`)
 })

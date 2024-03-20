@@ -1,1 +1,4 @@
-module.exports.prisma = require('./prisma')
+module.exports = {
+    prisma: require('./prisma'),
+    ...require('./constants')
+}

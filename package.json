@@ -4,7 +4,7 @@
 	"description": "A simple realtime webchat app 4 fun",
 	"scripts": {
 		"build": "sass src/application/assets/sass:public/css && cp -r src/application/assets/js public/",
-		"dev": "cd src/server && node --watch index.js"
+		"dev": "cd src/server && node index.js"
 	},
 	"author": "yadev83",
 	"license": "MIT",
@@ -14,5 +14,8 @@
 		"express-session": "^1.18.0",
 		"prisma": "^5.11.0",
 		"sass": "^1.72.0"
+	},
+	"imports": {
+		"#utils": "./src/server/utils/index.js"
 	}
 }
