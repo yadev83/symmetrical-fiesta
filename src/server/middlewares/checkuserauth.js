@@ -10,6 +10,7 @@ module.exports = (connected = true) => {
                         next()
                     } else {
                         req.session.error = 'you have been disconnected because you are connected elsewhere'
+                        req.session.destroy()
                         res.redirect('/login')
                     }
                 })
