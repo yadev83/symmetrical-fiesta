@@ -3,14 +3,15 @@ const { getUser } = require("#actions/users")
 module.exports = (connected = true) => {
     if(connected) {
         return (req, res, next) => {
-            if(req.session?.userId) {
+            if(req.session?.user?.uuid) {
                 // Get user and check that session id is the good one, or logout
-                return getUser(req.session.userId).then(user => {
+                return getUser(req.session.user.uuid).then(user => {
                     if(user.sid == req.sessionID) {
                         next()
                     } else {
-                        req.session.error = 'you have been disconnected because you are connected elsewhere'
-                        req.session.destroy()
+                        req.session.user = undefined
+                        req.session.alert = {type: 'warning', message: 'you have been disconnected because you are connected elsewhere'}
+
                         res.redirect('/login')
                     }
                 })
@@ -20,9 +21,9 @@ module.exports = (connected = true) => {
         }
     } else {
         return (req, res, next) => {
-            if(req.session?.userId) {
+            if(req.session?.user?.uuid) {
                 // Get user and check that session id is the good one, or logout
-                return getUser(req.session.userId).then(user => {
+                return getUser(req.session.user.uuid).then(user => {
                     if(user.sid == req.sessionID)
                         res.redirect('back')
                     else

@@ -18,11 +18,11 @@ const createUser = (email, name, password) => new Promise((resolve, reject) => {
     })
 })
 
-const getUser = (id) => new Promise((resolve, reject) => {
-    if(!id)
-        return reject('error while getUser: missing or invalid id')
+const getUser = (uuid) => new Promise((resolve, reject) => {
+    if(!uuid)
+        return reject('error while getUser: missing or invalid uuid')
 
-    return orm.user.findUnique({where: {id: parseInt(id)}}).then(fetchedUser => {
+    return orm.user.findUnique({where: {uuid: uuid}}).then(fetchedUser => {
         if(!fetchedUser) {
             const error = new Error('not found')
             error.code = 404
@@ -51,9 +51,9 @@ module.exports = {
     },
 
     get: (req, res, next) => {
-        const {id} = req.params
+        const {uuid} = req.params
 
-        return getUser(id).then(user => {
+        return getUser(uuid).then(user => {
             return res.status(200).json(user)
         }).catch(err => {
             console.error(`[GET /api/users/${id}] ${err.toString()}`)

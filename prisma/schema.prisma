@@ -26,7 +26,7 @@ model Message {
 
 model User {
 	id			Int		@id @default(autoincrement())
-	uuid		String	@default(uuid())
+	uuid		String	@unique @default(uuid())
 	sid			String?
 
 	email		String	@unique

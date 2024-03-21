@@ -62,11 +62,11 @@ server.ws('/', (socket, req) => {
 	const clientsSockets = expressWs.getWss('/').clients
 	const clientsSessions = [...clientsSockets].reduce((acc, client) => ({
 		...acc,
-		[client.req.sessionID]: client.req.session.userId
+		[client.req.sessionID]: client.req.session.user
 	}), {})
 
 	clientsSockets.forEach(function (client) {
-      	client.send(JSON.stringify(clientsSessions))
+    	client.send(JSON.stringify(clientsSessions))
     })
 	
 	// socket.onmessage = (msg) => {

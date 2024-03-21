@@ -3,9 +3,7 @@
     <%- include('layout/head.ejs', {title: 'Connexion'}) %>
 
     <body>
-        <% if (locals.error) { %>
-            <span class="error-alert"><%= error %></span>
-        <% } %>
+        <%- include('utils/alert.ejs') %>
 
         <form method="post" action="/api/auth/login">
             <label for="email">E-Mail:</label><br>
