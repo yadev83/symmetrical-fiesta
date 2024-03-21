@@ -3,7 +3,6 @@ const { create, get } = require('./actions')
 
 const usersRouter = Router()
 
-usersRouter.post('/', create)
-usersRouter.get('/', get)
+usersRouter.get('/:uuid', get)
 
 module.exports = usersRouter

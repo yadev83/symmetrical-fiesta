@@ -26,8 +26,11 @@ model Message {
 
 model User {
 	id			Int		@id @default(autoincrement())
+	uuid		String	@unique @default(uuid())
+	sid			String?
+
 	email		String	@unique
 	password	String
-	name		String?
+	name		String?	@unique
 	messages	Message[]
 }
