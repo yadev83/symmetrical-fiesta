@@ -55,6 +55,7 @@ server.use('/', router())
 // Web socket route
 const expressWs = require('express-ws')(server)
 server.ws('/', (socket, req) => {
+	console.log(sessionStore.sessions)
 	// On connection, store request in the socket 
 	socket.req = req
 

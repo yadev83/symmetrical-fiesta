@@ -3,15 +3,24 @@
     <%- include('layout/head.ejs') %>
 
     <body>
-        <h1>Symmertical Fiesta</h1>
-        <section>Salut à tous !</section>
+        <header>
+            <h1>Symmertical Fiesta</h1>
+        </header>
 
-        <article>
-            <% if (locals.user) { %>
-                <h2>Bonjour <%= user.name %></h2>
-            <% } %>
+        <nav>
+            <h3>Bonjour <%= user.name %></h3>
             <button><a href="api/auth/logout">Déconnexion</a></button>
-        </article>
+        </nav>
+
+        <section>
+            <h2>Chat Time !</h2>
+            <iframe name="hiddenFrame" style="position: absolute; top: -1px; left: -1px; width: 1px; height: 1px; opacity: 0;"></iframe>
+            <form method="post" action="/api/messages/" target="hiddenFrame">
+                <label for="message">Message: </label>
+                <input type="text" name="message" />
+                <button>Envoyer</button>
+            </form>
+        </section>
 
         <%- include('layout/footer.ejs') %>
     </body>
